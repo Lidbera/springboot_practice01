@@ -10,7 +10,7 @@ import java.util.Map;
 @Getter
 public class OAuthAttributes {
     private Map<String, Object> attributes;
-    private String nameAttributesKey;
+    private String nameAttributeKey;
     private String name;
     private String email;
     private String picture;
@@ -20,12 +20,13 @@ public class OAuthAttributes {
                            String nameAttributeKey, String name,
                            String email, String picture){
         this.attributes = attributes;
-        this.nameAttributesKey = nameAttributeKey;
+        this.nameAttributeKey = nameAttributeKey;
+        this.name = name;
         this.email = email;
         this.picture = picture;
     }
 
-    public static OAuthAttributes of(String registracionId,
+    public static OAuthAttributes of(String registrationId,
                                       String userNameAttributeName,
                                       Map<String, Object> attributes){
         return ofGoogle(userNameAttributeName, attributes);
